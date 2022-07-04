@@ -1,5 +1,6 @@
 package com.tyc.order.service;
 
+import com.tyc.order.feign.StockService;
 import com.tyc.order.mapper.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

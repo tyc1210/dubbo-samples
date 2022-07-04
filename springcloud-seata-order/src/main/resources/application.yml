@@ -3,21 +3,31 @@ server:
 
 spring:
   application:
-    name: pringcloud-seata-order
+    name: springcloud-seata-order
   datasource:
-    url: jdbc:mysql://localhost:3306/seata?serverTimezone=GMT%2b8&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3308/seata?serverTimezone=GMT%2b8&useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
-    seata:
-      tx-service-group: my_tx_group
-      service:
-        vgroupMapping:
-          mygroup: default
+        server-addr: 10.1.20.124:8848
+
+
+# 配置seata客户端的信息
+seata:
+  application-id: seata-server
+  tx-service-group: my_test_tx_group # 与server端 config.text下service.vgroupMapping.后的保持一致
+  config:
+    type: nacos   # 默认file
+    nacos:
+      server-addr: 127.0.0.1:8848
+      namespace:
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+
 
 
 
@@ -25,11 +35,6 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-seata:
-  tx-service-group: my_tx_group
-  service:
-    vgroup-mapping:
-      mygroup: default
 
 
 
