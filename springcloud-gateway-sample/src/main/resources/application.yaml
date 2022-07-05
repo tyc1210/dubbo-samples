@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: host_route1
+          uri: http://localhost:8880/say # 目标服务地址
+          order: 1
+          predicates:
+            - Path=/gateway/**
+          filters:
+            - StripPrefix=1 # 跳过前缀 即拦截 gateway开头的请求 去掉 gateway 转发到  目标服务地址
+
+
+server:
+  port: 8088
