@@ -1,9 +1,7 @@
-package com.tyc.provider3.service.dubbo;
+package com.tyc.provider4.service.dubbo;
 
 import com.tyc.api.IHelloService;
 import org.apache.dubbo.config.annotation.Service;
-import org.apache.dubbo.rpc.cluster.loadbalance.ConsistentHashLoadBalance;
-import org.apache.dubbo.rpc.cluster.support.FailoverCluster;
 import org.springframework.beans.factory.annotation.Value;
 
 /**

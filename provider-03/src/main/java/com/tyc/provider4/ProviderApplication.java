@@ -1,4 +1,4 @@
-package com.tyc.provider3;
+package com.tyc.provider4;
 
 import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.springframework.boot.SpringApplication;

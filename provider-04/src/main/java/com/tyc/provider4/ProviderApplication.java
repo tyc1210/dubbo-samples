@@ -1,5 +1,6 @@
-package com.tyc.provider3;
+package com.tyc.provider4;
 
+import com.tyc.provider4.service.dubbo.TestRefreshScope;
 import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,9 +20,11 @@ import java.util.concurrent.TimeUnit;
 public class ProviderApplication {
     public static void main(String[] args) throws InterruptedException {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(ProviderApplication.class, args);
+        TestRefreshScope bean = applicationContext.getBean(TestRefreshScope.class);
         while (true){
             TimeUnit.SECONDS.sleep(2);
             System.out.println(applicationContext.getEnvironment().getProperty("info"));
+            System.out.println("@RefreshScope:"+bean.getInfo());
         }
     }
 }
