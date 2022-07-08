@@ -1,7 +1,9 @@
 package com.tyc.provider4.service.dubbo;
 
 import com.tyc.api.IHelloService;
+import com.tyc.provider4.nacos.TestRefreshScope;
 import org.apache.dubbo.config.annotation.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
 /**
@@ -16,6 +18,13 @@ import org.springframework.beans.factory.annotation.Value;
 public class HelloServiceImpl implements IHelloService {
     @Value("${dubbo.application.name}")
     private String serviceName;
+
+    @Autowired
+    private TestRefreshScope testRefreshScope;
+
+    public TestRefreshScope getTestRefreshScope() {
+        return testRefreshScope;
+    }
 
     @Override
     public String sayHello(String name) {

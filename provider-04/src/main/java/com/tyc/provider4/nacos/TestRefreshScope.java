@@ -1,4 +1,4 @@
-package com.tyc.provider4.service.dubbo;
+package com.tyc.provider4.nacos;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -17,7 +17,6 @@ public class TestRefreshScope {
 
     @Value("${info}")
     private String info;
-
 
     public String getInfo() {
         return info;
