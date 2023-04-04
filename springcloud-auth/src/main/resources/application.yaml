@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ${APPLICATION_NAME:auth}
+  profiles:
+    active: ${PROFILES_ACTIVE:dev}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.1.1.188:31848
+        username: nacos
+        password: nacosdev
+
+
+server:
+  port: 8888
