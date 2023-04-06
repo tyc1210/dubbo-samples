@@ -9,7 +9,22 @@ spring:
         server-addr: 10.1.1.188:31848
         username: nacos
         password: nacosdev
+  redis:
+    database: 0
+    host: 10.1.1.91
+    port: 6379
+    password: 111111
 
+#与授权服务器对应的配置，配置客户端认证/校验token的地址以及自身参数
+security:
+  oauth2:
+    client:
+      client-id: client
+      client-secret: 123123
+      user-authorization-uri: http://localhost:8888/oauth/authorize
+      access-token-uri:  http://localhost:8888/oauth/token
+    resource:
+      token-info-uri: http://localhost:8888/oauth/check_token
 
 server:
   port: 8888

@@ -4,7 +4,9 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: 10.1.1.188:31848
+        username: nacos
+        password: nacosdev
     gateway:
       routes:
         - id: host_route1 # 指定路由唯一标识
@@ -18,4 +20,4 @@ spring:
 
 
 server:
-  port: 8088
+  port: 9999
